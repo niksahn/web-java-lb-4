@@ -6,6 +6,10 @@ import java.util.Stack;
 public class StackCollection {
     private Stack<String> stack = new Stack<>();
 
+    /**
+     * Переворачивает стек
+     * @return перевернутый стек
+     **/
     public StackCollection revert() {
         Stack<String> newStack =  stack;
         stack = new Stack<>();
@@ -15,6 +19,7 @@ public class StackCollection {
         }
         return this;
     }
+
 
     @Override
     public String toString(){
@@ -26,7 +31,7 @@ public class StackCollection {
     }
 
     /**
-     * Добавляет в объект данные из строки
+     * Добавляет в stack объекта данные из строки
      * **/
     public void  addFromString(String str){
         var strArray = str.split(" ");
