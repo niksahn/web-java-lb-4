@@ -14,6 +14,13 @@ public class ConsoleUI {
             inpStack = inputInfo();
             StackCollection stack = StackCollection.addFromString(inpStack); // stack.addFromString(inpStack);
             getRightFileName(fileInterface);
+            try {
+                stack.revert();
+                displayInfo(stack.toString());
+                fileInterface.addText(stack.toString());
+            } catch (Exception e) {
+                displayInfo("Ошибка записи");
+            }
         }
     }
 
