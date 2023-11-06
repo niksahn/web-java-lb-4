@@ -8,10 +8,11 @@ public class StackCollection {
 
     /**
      * Переворачивает стек
+     *
      * @return перевернутый стек
      **/
     public StackCollection revert() {
-        Stack<String> newStack =  stack;
+        Stack<String> newStack = stack;
         stack = new Stack<>();
         var newStackIter = newStack.iterator();
         while (newStackIter.hasNext()) {
@@ -22,20 +23,22 @@ public class StackCollection {
 
 
     @Override
-    public String toString(){
+    public String toString() {
         String str = "";
         for (String s : stack) {
             str += s + " ";
         }
-        return  str;
+        return str;
     }
 
     /**
-     * Добавляет в stack объекта данные из строки
-     * **/
-    public void  addFromString(String str){
+     * Возвращает созданный из строки объект StackCollection
+     **/
+    public static StackCollection addFromString(String str) {
+        StackCollection newStack = new StackCollection();
         var strArray = str.split(" ");
-        Arrays.stream(strArray).forEach(this.stack::push);
+        Arrays.stream(strArray).forEach(newStack.stack::push);
+        return newStack;
     }
 }
 

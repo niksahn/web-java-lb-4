@@ -1,19 +1,16 @@
 package com.niksahn.laba4;
 
-import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FI {
-    private DataOutputStream currentFile;
-    public FI(String file) throws FileNotFoundException {
-        currentFile =  new DataOutputStream( new
-                FileOutputStream(file));
+    private DataOutputStream currentFileStream;
+    private File f;
+    public void createFile(String file) throws FileNotFoundException {
+        currentFileStream = new DataOutputStream(new FileOutputStream(file));
     }
 
     public void addText(String text) throws IOException {
-        currentFile.writeChars(text + "\n");
+        currentFileStream.writeChars(text + "\n");
     }
 
 }
